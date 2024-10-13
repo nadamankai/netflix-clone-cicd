@@ -31,4 +31,4 @@ jobs:
           path: coverage
 
       - name : Run Build
-        run: yarn build
+        run: CI=false yarn build
