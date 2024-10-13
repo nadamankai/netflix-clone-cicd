@@ -7,3 +7,11 @@ I used compound components (just a design pattern) to build my components, and t
 Subscribe to my YouTube channel here: http://bit.ly/CognitiveSurge where I build projects like this! And don't forget, you can contribute to this project (highly encouraged!).
 
 ![Preview](netflix-preview.png?raw=true)
+
+## Testing & CI/CD
+
+This Netflix clone uses Jest for unit testing with custom hooks, context, and Firebase integration. Tests are automatically run on every pull request using GitHub Actions. The coverage is set to ensure at least 90% on branches, functions, lines, and statements.
+
+For CI/CD, the app is built and deployed using GitHub Packages. A Docker image is automatically built and pushed on each commit to the main branch, streamlining deployment and versioning.
+
+Contributions and improvements are welcome!
