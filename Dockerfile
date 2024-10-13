@@ -10,7 +10,7 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn run start
+RUN yarn build
 
 # Stage 2: Serve the React app using a Node.js server
 FROM node:16-alpine AS production
