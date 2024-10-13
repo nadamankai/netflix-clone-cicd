@@ -2,7 +2,7 @@ name: continuous-delivery.yml
 on:
   push:
     branches:
-      - feat/cd-pipeline
+      - master
 
 jobs:
   build-and-push-image:
