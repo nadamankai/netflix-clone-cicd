@@ -47,6 +47,7 @@ jobs:
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.coverage.exclusions=**/*.test.js
             -Dsonar.exclusions=**/*.test.js
+            -Dsonar.duplication.exclusions=src/seed.js
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
