@@ -35,9 +35,7 @@ jobs:
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-            args: >
-              -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+           SONAR_SCANNER_OPTS: "-Dsonar.javascript.lcov.reportPaths=$(pwd)/coverage/lcov.info"
 
 
       - name: Run Snyk to check for vulnerabilities
