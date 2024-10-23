@@ -30,5 +30,12 @@ jobs:
           name: coverage
           path: coverage
 
+      - name: Sonarqube Analyse
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
       - name : Run Build
         run: CI=false yarn build
+
