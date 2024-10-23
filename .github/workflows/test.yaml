@@ -40,7 +40,6 @@ jobs:
            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=netflix-clone-cicd
             -Dsonar.sources=src
             -Dsonar.tests=src/__tests__
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
