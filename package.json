@@ -58,10 +58,7 @@
         "statements": 90
       }
     },
-    "coverageReporters": [
-      "html",
-      "text"
-    ]
+    "coverageReporters": ["clover", "json", "lcov", "text"]
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",

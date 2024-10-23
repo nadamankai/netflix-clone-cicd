@@ -30,12 +30,24 @@ jobs:
           name: coverage
           path: coverage
 
+      - name: Adjust LCOV file paths
+        run: sed -i 's#/home/runner/work/netflix-clone-cicd/netflix-clone-cicd/src#/github/workspace/src#' coverage/lcov.info
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+        with:
+          args: >
+            -Dsonar.sources=src
+            -Dsonar.tests=src/__tests__
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.test.inclusions=**/*.test.ts
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.coverage.exclusions=**/*.test.js
+            -Dsonar.exclusions=**/*.test.js
+            -Dsonar.duplication.exclusions=src/seed.js
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
